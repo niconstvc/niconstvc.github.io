@@ -9,17 +9,15 @@ $(document).ready(function(){
         if (e.key === 'Enter' || e.keyCode === 13) {
             const value = $(this).val();
             switch(value){
-                case 'help':
+                case 'continuar':
                     printHelp();
                     break;
-                case 'clear':
+                case 'limpiar':
                     clearConsole();
                     break;
-                case 'print-all':
+                case 'ver todo':
                     printAllCommand();
                     break;
-                case 'game':
-                    launchGame();
                     break;
                 default:
                     if(value.substring(0, value.indexOf(' ')).toLowerCase() === 'argument'){
@@ -107,7 +105,7 @@ $(document).ready(function(){
     }
 
     function printHelp(){
-        let helpOutput = "<p>These are the list of available commands: </p>";
+        let helpOutput = "<p>Comandos disponibles: </p>";
 
         helpOutput += "<table style='margin-bottom: 5px'>";
         // helpOutput += "<thead>";
@@ -125,14 +123,14 @@ $(document).ready(function(){
         }
 
         helpOutput += "<tr>";
-        helpOutput += "<td>print-all</td>"
+        helpOutput += "<td>ver todo</td>"
         helpOutput += "<td>Show all information</td>"
         helpOutput += "</tr>";
 
 
 
         helpOutput += "<tr>";
-        helpOutput += "<td>clear</td>"
+        helpOutput += "<td>limpiar</td>"
         helpOutput += "<td>clear the console</td>"
         helpOutput += "</tr>";
 
