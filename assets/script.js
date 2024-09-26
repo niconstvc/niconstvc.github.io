@@ -89,8 +89,8 @@ $(document).ready(function(){
     }
 
     function commandNotFound(){
-        const notFoundText = "<p>Command not found!</p>"
-        const helpText = "<p>Type 'help' + <kbd>ENTER</kbd> for available commands</p>"
+        const notFoundText = "<p>Comando fallido!</p>"
+        const helpText = "<p>Escriba 'continuar' + <kbd>ENTER</kbd> para ver las opciones disponibles</p>"
         prompt(notFoundText+helpText)
     }
 
@@ -135,7 +135,7 @@ $(document).ready(function(){
         helpOutput += "</tr>";
 
         helpOutput += "</table>";
-        helpOutput += "<p>Commands are case sensitive</p>"
+        helpOutput += "<p>Los comandos distinguen entre mayuscula y minuscula</p>"
 
         prompt(helpOutput);
     }
@@ -149,28 +149,6 @@ $(document).ready(function(){
 
         prompt(output);
     }
-
-    function launchGame(){
-        $("#game").attr("src", "game.html");
-        $("#game").show();
-        $(".close").show();
-        prompt("<p>Game started...</p><p>Game Stopped...</p>")
-    }
-
-    $("#console-container").on("click", ".close", function(){
-        $("#game").hide();
-        $(".close").hide();
-        $("#game").attr("src", "");
-    });
-
-    function simulateKeyPress(character) {
-        jQuery.event.trigger({ type : 'keypress', which : character.charCodeAt(0) });
-      }
-
-      $("#startGame").click(function(){
-        $("#game").focus();
-        simulateKeyPress('n');
-      });
       
     //   $(function() {
     //     $('body').keypress(function(e) {
